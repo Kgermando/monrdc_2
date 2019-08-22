@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Société</th>
+        <th scope="col">Nom de Société</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Province</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">Publication</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let business of businessList; index as i' >
+        <th scope="row">{{ i + 1 }} </th>
+        <td>{{ business.societe }} </td>
+        <td>{{ business.nom }}</td>
+        <td>{{ business.tel }}</td>
+        <td>{{ business.ville }}</td>
+        <td>{{ business.province }}</td>
+        <td>{{ business.category }}</td>
+        <td>{{ business.published }}</td>
+      </tr>
+    </tbody>
+</table>

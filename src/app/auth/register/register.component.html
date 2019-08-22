@@ -1,0 +1,31 @@
+
+<mat-card class="example-form">
+    <mat-card-header class="title_login">
+        <mat-card-title color="accent">Inscription</mat-card-title>
+    </mat-card-header>
+        <mat-card-subtitle ></mat-card-subtitle>
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Email" #userEmail required>
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Mot de Passe</mat-label>
+            <input type="password" matInput placeholder="Password" #userPwd required>
+            <mat-icon matSuffix>vpn_key</mat-icon>
+            <mat-hint>Votre Mot de Passe est secret</mat-hint>
+        </mat-form-field>
+        <br><br> 
+        <button type="submit" mat-raised-button color="primary" (click)="authService.SignUp(userEmail.value, userPwd.value)">Inscription</button>
+
+    <br><br>
+<hr>
+    <mat-card-actions>
+            <a mat-raised-button (click)="authService.GoogleAuth()"><img src="../../../assets/img/googleSignUp.png" alt="" class="img_login"></a>
+    </mat-card-actions>
+    <mat-card-actions>
+            <a mat-raised-button routerLink="/auth/login" class="btn_login">Vous avez compte ? Connectez-vous ici.</a>
+    </mat-card-actions>
+
+</mat-card>
+    

@@ -1,0 +1,15 @@
+
+<mat-toolbar [class.mat-elevation-z6]="isActive" color="primary">
+    <span>MonRDC</span>
+    <span class="example-spacer"></span>
+    <button class="example-icon" mat-button routerLink='/layouts/search'>Acceuil</button>
+    <button class="example-icon" mat-button routerLink='/layouts/about'>A Propos</button>
+    <button class="example-icon" mat-button routerLink='/layouts/category'>Categorie</button>
+    <button class="example-icon" mat-button routerLink='/auth/register' *ngIf="!authService.userData as user">Inscription</button>
+    <button class="example-icon" mat-button routerLink='/auth/login' *ngIf="!authService.userData as user">Connexion</button>
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.userData as user">{{(user.displayName) ? user.displayName : 'User'}} <mat-icon>arrow_drop_down</mat-icon></button>
+    <mat-menu class="example-icon" #menu="matMenu">
+        <button mat-menu-item routerLink="/dashboard/profile/">Dashboard</button>
+        <button mat-menu-item (click)="authService.SignOut()">Déconnexion</button>
+    </mat-menu>
+</mat-toolbar>
