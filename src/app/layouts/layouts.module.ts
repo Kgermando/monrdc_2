@@ -12,14 +12,28 @@ import { AddBusinessComponent } from './business/add-business/add-business.compo
 import { EditBusinessComponent } from './business/edit-business/edit-business.component';
 import { ContactComponent } from './contact/contact.component';
 import { DetailsBusinessComponent } from './business/details-business/details-business.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [LayoutsComponent, SearchComponent, AboutComponent, CategoryComponent, BusinessListComponent, AddBusinessComponent, EditBusinessComponent, ContactComponent, DetailsBusinessComponent],
+  declarations: [LayoutsComponent,
+                 SearchComponent,
+                 AboutComponent,
+                 CategoryComponent,
+                 BusinessListComponent,
+                 AddBusinessComponent,
+                 EditBusinessComponent,
+                 ContactComponent,
+                 DetailsBusinessComponent],
+
+
+
   imports: [
     CommonModule,
     LayoutsRoutingModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class LayoutsModule { }

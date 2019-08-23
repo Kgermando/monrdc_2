@@ -26,6 +26,14 @@ export class BusinessService {
     this.businessData = this.businessCollection.valueChanges();
    }
 
+   getAllPostsDocNo() {
+    try {
+      return this.afs.collection('business-list').get();
+    } catch (error) {
+      return error;
+    }
+  }
+
   getAllbusiness() {
     return this.businessData = this.businessCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(action => {
@@ -35,6 +43,34 @@ export class BusinessService {
       });
     }));
   }
+
+  getBusiness(doc: string) {
+    try {
+      return this.afs.collection('business-list').doc(doc).valueChanges();
+    } catch (error) {
+      return error;
+    }
+  }
+
+  searchPost(critere: string) {
+    try {
+      // tslint:disable-next-line:prefer-const
+      let results = [];
+      this.afs.collection('business-list', ref =>
+        ref.where('socite', '>=', critere)
+          .where('socite', '<=', critere)).get().subscribe(data => {
+            data.docs.forEach(doc => {
+              this.getBusiness(doc.id).subscribe(post => {
+                results.push({ doc: doc.id, post });
+              });
+            });
+          });
+      return results;
+    } catch (error) {
+      return error;
+    }
+  }
+
 
   getOneBusiness(idBusiness: string) {
     this.businessDoc = this.afs.doc<BusinessData>(`business-list/${idBusiness}`);
