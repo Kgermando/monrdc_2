@@ -1,21 +1,21 @@
-export interface Business {
-    societe: string;
-    logo: any;
-    nom: string;
-    tel: string;
-    tel2: string;
-    tel3: string;
-    email: string;
-    adresse: string;
-    quartier: string;
-    commune: string;
-    ville: string;
-    province: string;
-    category: string;
-    sousCategory: string;
-    siteWeb: string;
-    sicursale: string;
-    published: Date;
+export interface BusinessData {
+    societe?: string;
+    logo?: any;
+    nom?: string;
+    tel?: string;
+    tel2?: string;
+    tel3?: string;
+    email?: string;
+    adresse?: string;
+    quartier?: string;
+    commune?: string;
+    ville?: string;
+    province?: string;
+    category?: string;
+    sousCategory?: string;
+    siteWeb?: string;
+    sicursale?: string;
+    published?: Date;
     id?: string;
 }
 

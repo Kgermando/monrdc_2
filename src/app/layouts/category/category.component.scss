@@ -6,4 +6,34 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
+
+  .g1{
+    width: 30% !important ;
+    height: 20% !important ;
+    // background-color: red;
+  }
+  .g2{
+    width: 65% !important;
+    // background-color: blue;
+    height: 20% !important ;
+    
+    
+  }
   
+  .fullWidth{
+    width: 100% !important ;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+    margin: 0 auto;
+  }
+  
+  mat-card {
+    margin: 10px;
+    max-width: 500px;
+    cursor: pointer;
+  }

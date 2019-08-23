@@ -25,7 +25,10 @@ import { MatToolbarModule,
          MatFormFieldModule,
          MatDatepickerModule,
          MatCheckboxModule,
-         MatAutocompleteModule} from '@angular/material';
+         MatAutocompleteModule,
+         MatTableModule,
+         MatSortModule,
+         MatPaginatorModule} from '@angular/material';
 
 const materalComponent = [
   MatToolbarModule,
@@ -55,6 +58,9 @@ const materalComponent = [
   MatDatepickerModule,
   MatCheckboxModule,
   MatAutocompleteModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ export class CategoryComponent implements OnInit {
   public businessList = [];
   public business = '';
 
+
   constructor(private data: BusinessService) { }
 
   ngOnInit() {
